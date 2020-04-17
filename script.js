@@ -78,7 +78,7 @@ function clearDisplay(){
   display.textContent = '0'
   num1=0;
   num2 =0;
-  chosen_operation =''
+  chosen_operator =''
 }
 
 function add(a,b){
@@ -86,7 +86,14 @@ function add(a,b){
 }
 
 function divide(a,b){
-  return a/b;
+  let result = a/b
+  if(result == 'Infinity'){
+    return "Error"
+  }
+  else if(result.toString().includes('.')){
+    return result.toFixed(2)
+  }
+  else return result
 }
 
 function multiply(a,b){
